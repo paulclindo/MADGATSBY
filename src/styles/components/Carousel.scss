@@ -1,0 +1,25 @@
+.glider-contain {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.BrandCarousel__item {
+  margin: .5em 3em;
+  display: flex;
+  align-items: center;
+
+  img {
+    filter: grayscale(1);
+
+
+  }
+
+  &:hover img {
+    filter: grayscale(0)
+  }
+}
+
+.glider-prev,
+.glider-next {
+  top: 0;
+}

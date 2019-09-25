@@ -1,0 +1,52 @@
+@import "../Global.scss";
+
+footer {
+  background: #f4f9fe;
+  font-family: $font-middle;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 0;
+
+  ul li {
+    list-style: none;
+
+  }
+
+}
+
+.Footer__img {
+  box-sizing: border-box;
+
+  img {
+    width: 80%;
+  }
+
+}
+
+.copyright {
+  background: #000;
+  text-align: center;
+
+  p {
+    margin: 0;
+    padding: .8em;
+    color: white;
+  }
+}
+
+.Footer__social {
+  ul {
+    display: flex;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    li {
+      margin: 0 1em;
+    }
+  }
+}

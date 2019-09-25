@@ -1,0 +1,20 @@
+ @import url("https://fonts.googleapis.com/css?family=Didact+Gothic|PT+Sans:400,700&display=swap");
+
+
+ $font-primary: "PT Sans",
+ sans-serif;
+ $font-middle: 'Didact Gothic',
+ sans-serif;
+ $primary-color: #3F516B;
+ $comple-color:#536E90;
+ $middle-color: #548FA9;
+ $white-color: #EEF5DA;
+ $black-color: rgb(27, 33, 36);
+
+ body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-size: 16px;
+   font-family: $font-primary;
+ }

@@ -1,0 +1,45 @@
+.Hero__container {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+
+  margin-left: 9em;
+  position: relative;
+  z-index: 2;
+  // mix-blend-mode: multiply;
+}
+
+.title {
+  width: 50%;
+}
+
+h1 {
+  font-size: 4.5em;
+  color: white;
+}
+
+.circle {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  background: #b8b3b3;
+  border-radius: 100%;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.circle-2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  background: #3f516b54;
+  border-radius: 100%;
+  mix-blend-mode: multiply;
+  z-index: 1;
+  mix-blend-mode: overlay;
+
+}
