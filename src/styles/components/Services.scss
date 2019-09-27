@@ -186,7 +186,7 @@ $ms-images-slide-height: 400px;
   // Slides images
   .ms-slide {
     &:nth-child(1) .ms-slide__image {
-      background-image: url('https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?cs=srgb&dl=bump-collaboration-colleagues-1068523.jpg&fm=jpg');
+      background-image: url('https://images.pexels.com/photos/2903063/pexels-photo-2903063.jpeg?cs=srgb&dl=business-calculator-computer-2903063.jpg&fm=jpg');
     }
 
     &:nth-child(2) .ms-slide__image {
@@ -194,15 +194,15 @@ $ms-images-slide-height: 400px;
     }
 
     &:nth-child(3) .ms-slide__image {
-      background-image: url('https://images.pexels.com/photos/990818/pexels-photo-990818.jpeg?cs=srgb&dl=agenda-analysis-business-plan-990818.jpg&fm=jpg');
+      background-image: url('https://images.pexels.com/photos/2903063/pexels-photo-2903063.jpeg?cs=srgb&dl=business-calculator-computer-2903063.jpg&fm=jpg');
     }
 
     &:nth-child(4) .ms-slide__image {
-      background-image: url('https://images.pexels.com/photos/1483933/pexels-photo-1483933.jpeg?cs=srgb&dl=business-deal-collaboration-colleagues-1483933.jpg&fm=jpg');
+      background-image: url('https://images.pexels.com/photos/2903063/pexels-photo-2903063.jpeg?cs=srgb&dl=business-calculator-computer-2903063.jpg&fm=jpg');
     }
 
     &:nth-child(5) .ms-slide__image {
-      background-image: url('https://images.pexels.com/photos/1483933/pexels-photo-1483933.jpeg?cs=srgb&dl=business-deal-collaboration-colleagues-1483933.jpg&fm=jpg');
+      background-image: url('https://images.pexels.com/photos/2903063/pexels-photo-2903063.jpeg?cs=srgb&dl=business-calculator-computer-2903063.jpg&fm=jpg');
     }
   }
 
@@ -350,17 +350,17 @@ $ms-links-slide-height: 60px;
       // left: 0;
       top: calc(50% - 1px);
       width: 100%;
-      box-shadow: 0 1px 0 #548FA9;
+      box-shadow: 0 1px 0 #3F516B;
     }
 
     &:before {
       height: 2px;
-      background-color: #0B0D14;
+      background-color: #fff;
     }
 
     &:after {
       height: 3px;
-      background-color: #548FA9;
+      background-color: #3F516B;
       opacity: 0;
       transition: 0.5s opacity;
     }
@@ -412,7 +412,7 @@ $ms-links-slide-height: 60px;
 }
 
 
-$color-primary: #548FA9;
+$color-primary: #fff;
 $color-secondary: rgba(255, 255, 255, 0.5);
 
 *,

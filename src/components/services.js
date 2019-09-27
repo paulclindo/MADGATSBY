@@ -1,19 +1,21 @@
-import React, { Component } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import "../styles/components/Services.scss"
 import MomentumSlider from "momentum-slider"
+import useOnScreen from "../hooks/useOnScreen"
 
-class Services extends Component {
-  constructor(props) {
-    super(props)
-    this.sliderContainer = React.createRef()
-    this.pagination = React.createRef()
-    this.msImages = {}
-  }
-  componentDidMount() {
-    let $pagination = this.pagination.current
-    let $sliderContainer = this.sliderContainer.current
+const Services = () => {
+  let dot = useRef(null)
+  let sliderContainer = useRef(null)
+  let pagination = useRef(null)
+  let [msImages, msSet] = useState({})
+  // const onScreen = useOnScreen(dot, { threshold: 0.8 })
+  // console.log(onScreen)
+
+  // let sliderContainer = useRef(null)
+  // let pagination = useRef(null)
+  useEffect(() => {
     let msNumbers = new MomentumSlider({
-      el: $sliderContainer,
+      el: sliderContainer,
       cssClass: "ms--numbers",
       range: [1, 5],
       rangeContent: function(i) {
@@ -25,15 +27,15 @@ class Services extends Component {
       },
       interactive: false,
     })
-    var titles = [
+    let titles = [
       "The Content Strategy",
       "The Media Content",
       "The Lead Magnets",
       "The Broadcast",
       "The Funnel",
     ]
-    var msTitles = new MomentumSlider({
-      el: $sliderContainer,
+    let msTitles = new MomentumSlider({
+      el: sliderContainer,
       cssClass: "ms--titles",
       range: [0, 4],
       rangeContent: function(i) {
@@ -46,8 +48,8 @@ class Services extends Component {
       },
       interactive: false,
     })
-    var msLinks = new MomentumSlider({
-      el: $sliderContainer,
+    let msLinks = new MomentumSlider({
+      el: sliderContainer,
       cssClass: "ms--links",
       range: [0, 4],
       rangeContent: function() {
@@ -57,11 +59,11 @@ class Services extends Component {
       interactive: false,
     })
     // // Get pagination items
-    let paginationItems = [].slice.call($pagination.children)
+    let paginationItems = [].slice.call(pagination.children)
     //   // Initializing the images slider
-    let msImages = new MomentumSlider({
+    msImages = new MomentumSlider({
       // Element to append the slider
-      el: $sliderContainer,
+      el: sliderContainer,
       // CSS class to reference the slider
       cssClass: "ms--images",
       // Generate the 4 slides required
@@ -85,58 +87,96 @@ class Services extends Component {
         paginationItems[newIndex].classList.add("pagination__item--active")
       },
     })
-    this.msImages = msImages
-  }
-  handleCarousel = index => {
-    if (this.msImages) {
-      this.msImages.select(index)
+    msSet(msImages)
+    // console.log(onScreen)
+    console.log(dot)
+  }, [])
+
+  const handleCarousel = index => {
+    if (msImages) {
+      msImages.select(index)
     }
   }
 
-  render() {
-    return (
-      <>
-        <div className="bigtext">MAD</div>
-        <div className="circle-2"></div>
-        <div className="container">
-          <div className="sliders-container" ref={this.sliderContainer}>
-            <ul className="pagination" ref={this.pagination}>
-              <li
-                className="pagination__item"
-                onClick={() => this.handleCarousel(0)}
-              >
-                <a className="pagination__button"></a>
-              </li>
-              <li
-                className="pagination__item"
-                onClick={() => this.handleCarousel(1)}
-              >
-                <a className="pagination__button"></a>
-              </li>
-              <li
-                className="pagination__item"
-                onClick={() => this.handleCarousel(2)}
-              >
-                <a className="pagination__button"></a>
-              </li>
-              <li
-                className="pagination__item"
-                onClick={() => this.handleCarousel(3)}
-              >
-                <a className="pagination__button"></a>
-              </li>
-              <li
-                className="pagination__item"
-                onClick={() => this.handleCarousel(4)}
-              >
-                <a className="pagination__button"></a>
-              </li>
-            </ul>
-          </div>
+  return (
+    <>
+      <div className="bigtext">MAD</div>
+      <div className="circle-2" ref={el => (dot = el)}></div>
+      <div className="container">
+        <div className="sliders-container" ref={el => (sliderContainer = el)}>
+          <ul className="pagination" ref={el => (pagination = el)}>
+            <li className="pagination__item" onClick={() => handleCarousel(0)}>
+              <a className="pagination__button"></a>
+            </li>
+            <li className="pagination__item" onClick={() => handleCarousel(1)}>
+              <a className="pagination__button"></a>
+            </li>
+            <li className="pagination__item" onClick={() => handleCarousel(2)}>
+              <a className="pagination__button"></a>
+            </li>
+            <li className="pagination__item" onClick={() => handleCarousel(3)}>
+              <a className="pagination__button"></a>
+            </li>
+            <li className="pagination__item" onClick={() => handleCarousel(4)}>
+              <a className="pagination__button"></a>
+            </li>
+          </ul>
         </div>
-      </>
-    )
-  }
+      </div>
+    </>
+  )
 }
 
 export default Services
+
+//   render() {
+//     return (
+//       <>
+//         <div className="bigtext">MAD</div>
+//         <div
+//           className="circle-2"
+//           ref = {el => dot = el}
+//           style={{ transform: "translateX(100px)", transition: "1000s" }}
+//         ></div>
+//         <div className="container">
+//           <div className="sliders-container" ref={this.sliderContainer}>
+//             <ul className="pagination" ref={this.pagination}>
+//               <li
+//                 className="pagination__item"
+//                 0)}
+//               >
+//                 <a className="pagination__button"></a>
+//               </li>
+//               <li
+//                 className="pagination__item"
+//                 onClick={() => this.handleCarousel(1)}
+//               >
+//                 <a className="pagination__button"></a>
+//               </li>
+//               <li
+//                 className="pagination__item"
+//                 onClick={() => this.handleCarousel(2)}
+//               >
+//                 <a className="pagination__button"></a>
+//               </li>
+//               <li
+//                 className="pagination__item"
+//                 onClick={() => this.handleCarousel(3)}
+//               >
+//                 <a className="pagination__button"></a>
+//               </li>
+//               <li
+//                 className="pagination__item"
+//                 onClick={() => this.handleCarousel(4)}
+//               >
+//                 <a className="pagination__button"></a>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </>
+//     )
+//   }
+// }
+
+// export default

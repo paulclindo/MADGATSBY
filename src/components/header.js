@@ -3,6 +3,7 @@ import logoMad from "../images/logo-Mad.svg"
 import React, { useRef } from "react"
 import "../styles/components/Header.scss"
 import useOnScreen from "../hooks/useOnScreen"
+import Brand from "./brand"
 
 // function useOnScreen(options) {
 //   const [ref, setRef] = React.useState(null)
@@ -33,7 +34,7 @@ import useOnScreen from "../hooks/useOnScreen"
 
 const Header = () => {
   const ref = useRef()
-  const onScreen = useOnScreen(ref, { threshold: 0.8 })
+  const onScreen = useOnScreen(ref, { threshold: 0.7 })
 
   let right90 = "Navbar__items"
   let left90 = "logo-MAD"
@@ -48,16 +49,13 @@ const Header = () => {
       <div className="Navbar">
         <div className={left90}>
           <Link to="/">
-            <img src={logoMad} alt="" />
+            <Brand size={110} color={onScreen ? "#fff" : "#333"} />
           </Link>
         </div>
-        <div
-          className={right90}
-          style={{ background: onScreen ? "transparent" : "#fff" }}
-        >
+        <div className={right90}>
           <ul>
             <li>
-              <Link to="/portfolio">Portafolio</Link>
+              <Link to="/portfo">Portafolio</Link>
             </li>
             <li>
               <Link to="/about">Nosotros</Link>

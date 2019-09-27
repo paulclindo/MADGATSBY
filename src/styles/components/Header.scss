@@ -57,10 +57,61 @@
 
 .logo-MAD {
   cursor: pointer;
+  transition: .8s;
 }
 
-.logo-MAD:hover {
+.logo-MAD:hover svg path {
+
+
   animation: bounce 1.5s ease;
+
+  // fill: white;
+  &:nth-child(1) {
+    // fill: #fff;  
+    fill: #548FA9;
+  }
+
+  &:nth-child(2) {
+    fill: #536E90;
+    // fill: #fff;
+  }
+
+  &:nth-child(3) {
+    fill: #3F516B;
+  }
+}
+
+.logo-MAD svg path {
+  // fill: none;
+  stroke: white;
+
+  &:nth-child(1) {
+    stroke-dasharray: 147;
+    stroke-dashoffset: 147;
+    animation: fullline 5s infinite ease alternate;
+  }
+
+  &:nth-child(2) {
+    stroke-dasharray: 162;
+    stroke-dashoffset: 162;
+    // fill: #fff;
+    animation: fullline 5s infinite ease alternate;
+  }
+
+  &:nth-child(3) {
+    stroke-dasharray: 168;
+    stroke-dashoffset: 168;
+    animation: fullline 5s infinite ease alternate;
+    // fill: #fff;
+  }
+}
+
+@keyframes fullline {
+
+  100% {
+    // fill: white;
+    stroke-dashoffset: 0;
+  }
 }
 
 .left-90 {
@@ -68,23 +119,26 @@
   transform-origin: top right;
   position: fixed;
   right: 99%;
-  padding-left: 20px;
+  top: 4%;
+  // padding-left: 20px;
   text-overflow: clip;
   white-space: nowrap;
   overflow: hidden;
   z-index: 10;
+  transition: opacity .5s ease;
 }
 
 .faded {
   -webkit-animation-name: fadeMenu;
   animation-name: fadeMenu;
   -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
+
 }
 
 .right-90 {
   display: block;
-  transition: opacity 1s;
+  transition: opacity 1s ease;
   opacity: 1;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -94,7 +148,7 @@
   transform-origin: top left;
   position: fixed;
   left: 100%;
-  padding-left: 20px;
+  // padding-left: 20px;
   width: 100vh;
   -o-text-overflow: clip;
   text-overflow: clip;
@@ -130,6 +184,10 @@
 @keyframes fadeMenu {
   0% {
     opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
   }
 
   100% {

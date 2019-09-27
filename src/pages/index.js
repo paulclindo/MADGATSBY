@@ -2,8 +2,6 @@ import React from "react"
 import "../styles/Global.scss"
 import "../styles/Home.scss"
 
-import Layout from "../components/layout"
-import Header from "../components/header"
 import Hero from "../components/hero"
 import Services from "../components/services"
 import SEO from "../components/seo"
@@ -24,7 +22,7 @@ const IndexPage = () => {
       <div
         className="Hero-content"
         style={{
-          opacity: onScreen ? 0 : 1,
+          opacity: onScreen ? 0.5 : 1,
           transition: ".8s",
         }}
       >
@@ -34,9 +32,9 @@ const IndexPage = () => {
         className="services-container"
         ref={ref}
         style={{
-          background: onScreen ? "#548FA9" : "#fff",
+          background: onScreen ? "rgba(84, 143, 169, 0.82)" : "#fff",
           transition: ".8s",
-          opacity: onScreen ? 1 : 0,
+          opacity: onScreen ? 1 : 0.5,
         }}
       >
         <div
