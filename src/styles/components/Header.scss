@@ -4,7 +4,6 @@
   align-items: center;
   height: 80px;
   padding: 0 2em;
-  // position: relative;
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -29,7 +28,6 @@
   &:hover {
     color: #548FA9;
 
-    // background: #333
     &:after {
       position: absolute;
       width: 100%;
@@ -45,10 +43,7 @@
     width: 0;
     left: 50%;
     bottom: 0;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
     transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   }
 }
@@ -65,15 +60,12 @@
 
   animation: bounce 1.5s ease;
 
-  // fill: white;
   &:nth-child(1) {
-    // fill: #fff;  
     fill: #548FA9;
   }
 
   &:nth-child(2) {
     fill: #536E90;
-    // fill: #fff;
   }
 
   &:nth-child(3) {
@@ -82,8 +74,7 @@
 }
 
 .logo-MAD svg path {
-  // fill: none;
-  stroke: white;
+  // stroke: white;
 
   &:nth-child(1) {
     stroke-dasharray: 147;
@@ -94,7 +85,6 @@
   &:nth-child(2) {
     stroke-dasharray: 162;
     stroke-dashoffset: 162;
-    // fill: #fff;
     animation: fullline 5s infinite ease alternate;
   }
 
@@ -102,14 +92,12 @@
     stroke-dasharray: 168;
     stroke-dashoffset: 168;
     animation: fullline 5s infinite ease alternate;
-    // fill: #fff;
   }
 }
 
 @keyframes fullline {
 
   100% {
-    // fill: white;
     stroke-dashoffset: 0;
   }
 }
@@ -120,7 +108,6 @@
   position: fixed;
   right: 99%;
   top: 4%;
-  // padding-left: 20px;
   text-overflow: clip;
   white-space: nowrap;
   overflow: hidden;
@@ -129,9 +116,7 @@
 }
 
 .faded {
-  -webkit-animation-name: fadeMenu;
   animation-name: fadeMenu;
-  -webkit-animation-duration: 1.5s;
   animation-duration: 1s;
 
 }
@@ -140,17 +125,11 @@
   display: block;
   transition: opacity 1s ease;
   opacity: 1;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  /* transform: rotate(90deg); */
-  /* -webkit-transform-origin: top left; */
-  -ms-transform-origin: top left;
+  transform: rotate(90deg);
   transform-origin: top left;
   position: fixed;
   left: 100%;
-  // padding-left: 20px;
   width: 100vh;
-  -o-text-overflow: clip;
   text-overflow: clip;
   white-space: nowrap;
   overflow: hidden;

@@ -1,45 +1,32 @@
 @import "./Global.scss";
 
-.Hero-content {
+.Home__Hero {
   background-image: url(../images/video-image.jpg);
   position: relative;
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  // mix-blend-mode: multiply;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    background-color: #548FA9;
+    z-index: 0;
+  }
 }
 
-.Hero-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  background-color: #548FA9;
-  z-index: 0;
-}
-
-
-
-.title-section {
-  color: #3F516B;
-  font-size: 1.2em;
-  padding: 2em 0;
-  font-weight: bold;
-  text-align: center;
-}
-
-.services-container {
+.Home__Service {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  // background-color: rgba(255, 255, 255, 0.66);
-  // background-color: $comple-color;
   justify-content: center;
   overflow: hidden;
 
@@ -56,7 +43,6 @@
   }
 }
 
-.portfolio-container {
-  background-color: rgba(0, 0, 0, 0.02);
-
-}
+// .portfolio-container {
+//   background-color: rgba(0, 0, 0, 0.02);
+// }

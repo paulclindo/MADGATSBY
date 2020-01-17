@@ -10,11 +10,23 @@
  $middle-color: #548FA9;
  $white-color: #EEF5DA;
  $black-color: rgb(27, 33, 36);
+ $font-size: 16px;
 
  body {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-size: 16px;
+   font-size: $font-size;
    font-family: $font-primary;
+ }
+
+ .Section {
+   &__title {
+
+     color: #3F516B;
+     font-size: 1.2em;
+     padding: 2em 0;
+     font-weight: bold;
+     text-align: center;
+   }
  }

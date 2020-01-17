@@ -5,37 +5,11 @@ import "../styles/components/Header.scss"
 import useOnScreen from "../hooks/useOnScreen"
 import Brand from "./brand"
 
-// function useOnScreen(options) {
-//   const [ref, setRef] = React.useState(null)
-//   const [visible, setVisible] = React.useState(false)
-
-//   React.useEffect(() => {
-//     const observer = new IntersectionObserver(([entry]) => {
-//       setVisible(entry.isIntersecting)
-//     }, options)
-
-//     if (ref) {
-//       observer.observe(ref)
-//       console.log("Se esta escuchando", ref)
-//     }
-
-//     return () => {
-//       if (ref) {
-//         observer.unobserve(ref)
-//         console.log("dejo de escuchars")
-//       }
-//     }
-//   }, [ref, options])
-
-//   return [setRef, visible]
-// }
-// const [ref, setRef] = React.useState(null)
-// const [visible, setVisible] = React.useState(false)
-
 const Header = () => {
-  const ref = useRef()
+  const ref = useRef(null)
   const onScreen = useOnScreen(ref, { threshold: 0.7 })
 
+  console.log(ref)
   let right90 = "Navbar__items"
   let left90 = "logo-MAD"
   if (!onScreen) {
@@ -49,7 +23,11 @@ const Header = () => {
       <div className="Navbar">
         <div className={left90}>
           <Link to="/">
-            <Brand size={110} color={onScreen ? "#fff" : "#333"} />
+            <Brand
+              size={110}
+              color={onScreen ? "#fff" : "#333"}
+              stroke={onScreen ? "transparent" : "transparent"}
+            />
           </Link>
         </div>
         <div className={right90}>

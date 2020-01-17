@@ -89,8 +89,10 @@ const Services = () => {
     })
     msSet(msImages)
     // console.log(onScreen)
-    console.log(dot)
   }, [])
+  // const onScreen = useOnScreen(dot, { threshold: 1 })
+  // console.log(onScreen)
+  // console.log(dot)
 
   const handleCarousel = index => {
     if (msImages) {

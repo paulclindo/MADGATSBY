@@ -5,6 +5,7 @@ import Portfolio from "../components/portfolio"
 import PortfolioItems from "../components/portfolioItems"
 import MiniHero from "../components/miniHero"
 import "../styles/Portfolio.scss"
+import AOS from "aos"
 
 class Portfo extends Component {
   state = {
@@ -85,8 +86,13 @@ class Portfo extends Component {
       },
     ],
   }
-
   render() {
+    AOS.init({
+      offset: 100,
+      // startEvent: "DOMContentLoaded",
+      duration: 1000,
+      anchorPlacement: "top",
+    })
     const projects = this.state.allList
     return (
       <>
@@ -96,24 +102,20 @@ class Portfo extends Component {
           title="Examples speak louder than words"
           description="OUR WORK"
         />
-        <div
-          className="Section-content"
-          style={{ background: "#323223" }}
-        ></div>
-        <div className="title-section">Explore our recent projects.</div>
+        <div className="Section__title">Explore our recent projects.</div>
 
-        <div className="listgroup__container">
-          <ul className="listgroup">
+        <div className="Categories">
+          <ul className="Categories__container" data-aos="fade-up">
             <li>
               <strong>Mostrar:</strong>
             </li>
-            <li className="listgroup__item">Todo</li>
-            <li className="listgroup__item">Corporativo</li>
-            <li className="listgroup__item">Entrevista</li>
-            <li className="listgroup__item">Eventos</li>
-            <li className="listgroup__item">Motion Graphics</li>
-            <li className="listgroup__item">Publicidad</li>
-            <li className="listgroup__item">Documentales</li>
+            <li className="Categories__item">Todo</li>
+            <li className="Categories__item">Corporativo</li>
+            <li className="Categories__item">Entrevista</li>
+            <li className="Categories__item">Eventos</li>
+            <li className="Categories__item">Motion Graphics</li>
+            <li className="Categories__item">Publicidad</li>
+            <li className="Categories__item">Documentales</li>
           </ul>
         </div>
 

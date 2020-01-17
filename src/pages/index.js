@@ -1,7 +1,6 @@
-import React from "react"
+import React, { useRef } from "react"
 import "../styles/Global.scss"
 import "../styles/Home.scss"
-
 import Hero from "../components/hero"
 import Services from "../components/services"
 import SEO from "../components/seo"
@@ -10,17 +9,23 @@ import PortfolioItems from "../components/portfolioItems"
 import BrandCarousel from "../components/brandcarousel"
 import Values from "../components/values"
 import CallAction from "../components/callaction"
-import { useRef } from "react"
 import useOnScreen from "../hooks/useOnScreen"
+import AOS from "aos"
 
 const IndexPage = () => {
+  AOS.init({
+    offset: 100,
+    // startEvent: "DOMContentLoaded",
+    duration: 1000,
+    anchorPlacement: "top",
+  })
   const ref = useRef()
   const onScreen = useOnScreen(ref, { threshold: [0.5, 0.6] })
   return (
     <>
       <SEO title="Home" />
       <div
-        className="Hero-content"
+        className="Home__Hero"
         style={{
           opacity: onScreen ? 0.5 : 1,
           transition: ".8s",
@@ -29,7 +34,7 @@ const IndexPage = () => {
         <Hero />
       </div>
       <div
-        className="services-container"
+        className="Home__Service"
         ref={ref}
         style={{
           background: onScreen ? "rgba(84, 143, 169, 0.82)" : "#fff",
@@ -38,17 +43,18 @@ const IndexPage = () => {
         }}
       >
         <div
-          className="title-section"
+          className="Section__title"
           style={{
             color: onScreen ? "#fff" : "#000",
             transition: ".8s",
           }}
+          data-aos="zoom-in"
         >
           Nuestros Servicios
         </div>
         <Services />
       </div>
-      <div className="title-section">Nuestros Trabajos Recientes</div>
+      <div className="Section__title">Nuestros Trabajos Recientes</div>
       <Portfolio>
         <PortfolioItems
           title="Factoring"
@@ -75,9 +81,9 @@ const IndexPage = () => {
           link="https://pisogerencial.reactionpages.com/EP01-Factoring/"
         />
       </Portfolio>
-      <div className="title-section">Con quienes hemos venido trabajando</div>
+      <div className="Section__title">Con quienes hemos venido trabajando</div>
       <BrandCarousel />
-      <div className="title-section">¿Por qué somos diferentes?</div>
+      <div className="Section__title">¿Por qué somos diferentes?</div>
       <Values />
       <CallAction />
     </>

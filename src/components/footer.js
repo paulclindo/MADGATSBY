@@ -44,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="copyright">
+      <div className="Footer__copyright">
         <p>@ 2019 MadMedia - Producción Multimedia de Alta Calidad</p>
       </div>
     </footer>

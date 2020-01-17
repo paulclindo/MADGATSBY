@@ -430,52 +430,6 @@ a {
 }
 
 
-.header {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-}
-
-.header__logo {
-  font-size: 1.3em;
-  font-weight: 900;
-  letter-spacing: -1px;
-
-  span {
-    display: inline-block;
-    transform: translateY(4px) rotate(180deg);
-    pointer-events: none;
-  }
-}
-
-.header__menu {
-  margin-left: auto;
-}
-
-.header__menu__list,
-.footer__menu__list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.header__menu__link {
-  margin-left: 50px;
-}
-
-.footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px;
-}
-
-.footer__menu__link {
-  margin-left: 50px;
-  color: $color-secondary;
-}
-
 .sliders-container {
   position: relative;
   display: flex;

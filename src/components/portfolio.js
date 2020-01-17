@@ -3,7 +3,7 @@ import React from "react"
 const Portfolio = ({ children }) => {
   return (
     <>
-      <div className="portfolio-content">{children}</div>
+      <div className="Portfolio__content">{children}</div>
     </>
   )
 }
